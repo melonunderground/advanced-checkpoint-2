@@ -1,11 +1,14 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") { 
+function houses(state = [], action) { 
+  if (action.type === "HOUSES_LOADED") {
+    return [...state,action.value];
+  }
   return state;
 }
 
-
 const rootReducer = combineReducers({
-  someThing
+  houses,
 });
+
 export default rootReducer;
