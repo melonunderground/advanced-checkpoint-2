@@ -7,64 +7,72 @@
 //     * onSubmit call an action called createThing(change it to make sense for your model)
 
 
-import React, { Component } from 'react';
+import React from 'react';
 
-class CreateHouse extends Component{
- constructor(){
+class CreateHouse extends React.Component {
+ constructor() {
+   super();
    this.state = {
+     house: {
      name:"",
      address:"",
      type:"",
      bathrooms:"",
      bedrooms:""
-    };
+    }
+  }
  }
 
  render(){
    return (
      <div>
      <h1>house</h1>
-     <form onSubmit={(event) => {
-        event.preventDefault();
+     <form onSubmit={(e) => {
+        e.preventDefault();
       if (this.props.createHouse) {
-        this.props.createHouse(this.state);
+        this.props.createHouse(this.state.house);
       }
 
      }}>
 
      <div>
 
-     name: <input onChange={(event) => {
+     Name: <input onChange={(e) => {
+       const house = {name: e.target.value};
        this.setState({
-         name: event.target.value
+         house: Object.assign(this.state.house,house)
        });
      }} />
      </div>
      <div>
-        address: <input onChange={(event) => {
+      Address: <input onChange={(e) => {
+        const house = {address: e.target.value};
           this.setState({
-            address: event.target.value
+          house: Object.assign(this.state.house,house)
           });
         }} />
       </div>
       <div>
-      type: <input onChange={(event) => {
+      Type: <input onChange={(e) => {
+        const house = {type: e.target.value};
         this.setState({
-          type: event.target.value
+          house: Object.assign(this.state.house,house)
         });
       }} />
     </div>
     <div>
-    bedrooms: <input onChange={(event) => {
+      Bedrooms: <input onChange={(e) => {
+        const house = {bedrooms: e.target.value};
       this.setState({
-        bedrooms: event.target.value
+        house: Object.assign(this.state.house,house)
       });
     }} />
   </div>
   <div>
-  bathrooms: <input onChange={(event) => {
+      Bathrooms: <input onChange={(e) => {
+        const house = {bathrooms: e.target.value};
     this.setState({
-      bathrooms: event.target.value
+      house: Object.assign(this.state.house,house)
     });
   }} />
 </div>

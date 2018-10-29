@@ -10,11 +10,11 @@
 
 import React from "react";
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 
-const Houses = (props) {
+function Houses (props) {
     const houseDivs = props.houses.map((house,index)=> {
 
     return (
@@ -24,11 +24,11 @@ const Houses = (props) {
                 <li>{house.type}</li>
                 <li>{house.address}</li>
             </ul>
-            <Link to={"house/" + house._id}><button>view</button></Link>
-            <button onClick={() => {props.deleteHouse(house._id)}}>delete</button>
+            <Link to={"/house/" + house.id}>details</Link>
+            <button onClick={() => {props.deleteHouse(house.id)}}>delete</button>
        </div>);
-      )
-   }
+      
+   })
     return (
         <div>{houseDivs}</div>
     );
@@ -37,6 +37,6 @@ const Houses = (props) {
 
 Houses.propTypes = {
     houses:PropTypes.array.isRequired
-}
+};
 
 export default Houses;

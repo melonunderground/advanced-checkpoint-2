@@ -10,7 +10,7 @@
 * Client code goes in client/src
 
 ### React
-* Create a function component that list out a collection of your models (ListOfUsers)
+* Create a function component that lists out a collection of your models (ListOfUsers)
     * Use prop types to define what props the component needs
     * It should probably need a prop named after the plural of your model, and it should probably be an array
     * Probably want to map over this array and create some divs or li’s showing 3 of the properties of the item
