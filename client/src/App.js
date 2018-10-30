@@ -12,7 +12,7 @@ import "./App.css";
 import HouseContainer from "./containers/HouseContainer";
 import HousesContainer from "./containers/HousesContainer";
 import CreateHouseContainer from "./containers/CreateHouseContainer";
-import {BrowserRouter,Route,Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class App extends Component {
 
@@ -21,23 +21,23 @@ class App extends Component {
     this.props.loadHouses();
 
   }
- 
-  
+
+
   render() {
     return (
       <div>
-      <BrowserRouter>
-     
-      <Switch>
+        <BrowserRouter>
 
-      <Route path="/houses" component={HousesContainer}/>
-      <Route path="/createhouse" component={CreateHouseContainer}/>
-      <Route path="/house/:id" component={HouseContainer}/>
-      <Route path="/" component={CreateHouseContainer}/>
-      </Switch>
+          <Switch>
 
-   
-      </BrowserRouter>
+            <Route path="/houses" component={HousesContainer} />
+            <Route path="/createhouse" component={CreateHouseContainer} />
+            <Route path="/house/:id" component={HouseContainer} />
+            <Route path="/" component={CreateHouseContainer} />
+          </Switch>
+
+
+        </BrowserRouter>
       </div>
     );
   }

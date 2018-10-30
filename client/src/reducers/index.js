@@ -2,9 +2,9 @@
 // * care about the action THINGS_LOADED
 
 
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 
-function houses(state = [], action) { 
+function houses(state = [], action) {
   if (action.type === "HOUSES_LOADED") {
     return action.value;
   }

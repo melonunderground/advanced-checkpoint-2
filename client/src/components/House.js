@@ -9,23 +9,23 @@ import { Link } from 'react-router-dom';
 function House(props) {
   const houseId = props.match.params.id;
   const house = props.houses.find(h => h._id == houseId) || {};
-    return (
+  return (
+    <div>
       <div>
-    <div>
-      <p>{house.name}</p>
-      <p>{house.description}</p>
-      <p>{house.address}</p>
-      <p>{house.bedrooms}</p>
-      <p>{house.bathrooms}</p>
+        <p>{house.name}</p>
+        <p>{house.description}</p>
+        <p>{house.address}</p>
+        <p>{house.bedrooms}</p>
+        <p>{house.bathrooms}</p>
+      </div>
+      <div>
+        <Link to={"/createhouse/"}><button>create house</button></Link>
+        <Link to={"/houses"}><button>houses</button></Link>
+        <button onClick={() => { props.deleteHouse(house._id) }}>delete</button>
+      </div>
     </div>
-    <div>
-    <Link to={"/createhouse/"}><button>create house</button></Link>
-    <Link to={"/houses"}><button>houses</button></Link>
-    <button onClick={() => {props.deleteHouse(house._id)}}>delete</button>
-    </div>
-    </div>
-    );
-   }
+  );
+}
 
-   export default House;
+export default House;
 

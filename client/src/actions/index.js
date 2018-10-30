@@ -12,11 +12,11 @@
 export function loadHouses() {
   return function (dispatch) {
     fetch("/houses")
-    .then( (response) => {
-      return response.json();
-    }).then((houses) => {
-      dispatch(housesLoaded(houses));
-    });
+      .then((response) => {
+        return response.json();
+      }).then((houses) => {
+        dispatch(housesLoaded(houses));
+      });
   };
 }
 export function housesLoaded(houses) {
@@ -27,28 +27,27 @@ export function housesLoaded(houses) {
 }
 
 export function createHouse(house) {
-    return function (dispatch) {
-      fetch("/houses", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(house)
-      }).then(() => 
-          dispatch(loadHouses()));
-    };
-  }
+  return function (dispatch) {
+    fetch("/houses", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(house)
+    }).then(() =>
+      dispatch(loadHouses()));
+  };
+}
 
 
-  export function deleteHouse(id) {
-      return function (dispatch) {
-          fetch("/house/" + id, {
-              method: "DELETE",
-              headers: {"Content-Type": "application/json"},
-      }).then((response) => {
-          return response.json();
+export function deleteHouse(id) {
+  return function (dispatch) {
+    fetch("/house/" + id, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    }).then((response) => {
+      return response.json();
 
-      }).then(() => {
-           dispatch(loadHouses());
-          });
-      };
-    }
-  
+    }).then(() => {
+      dispatch(loadHouses());
+    });
+  };
+}

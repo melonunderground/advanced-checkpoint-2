@@ -5,10 +5,10 @@ import { connect } from "react-redux";
 import Houses from "../components/Houses";
 import { deleteHouse } from "../actions/index";
 
-const mapStateToProps = state => ({ houses: state.houses});
+const mapStateToProps = state => ({ houses: state.houses });
 
-const mapDispatchToProps = (dispatch) => ({ 
-    deleteHouse:(id) => {dispatch(deleteHouse(id))} 
+const mapDispatchToProps = (dispatch) => ({
+    deleteHouse: (id) => { dispatch(deleteHouse(id)) }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Houses);
