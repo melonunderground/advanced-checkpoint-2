@@ -7,11 +7,16 @@ import bodyParser from "body-parser";
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://dane:letmein123@ds143953.mlab.com:43953/checkpoint2");
+var promise = mongoose.connect("mongodb://dane:letmein123@ds143953.mlab.com:43953/checkpoint2", {
+  useMongoClient: true,
+});
+
+import HouseRoutes from "./routes/HouseRoutes";
 
 const app = express();
 app.use(bodyParser.json());
 
+app.use(HouseRoutes);
 
 
 

@@ -7,6 +7,8 @@ import { deleteHouse } from "../actions/index";
 
 const mapStateToProps = state => ({ houses: state.houses});
 
-const mapDispatchToProps = { deleteHouse: deleteHouse};
+const mapDispatchToProps = (dispatch) => ({ 
+    deleteHouse:(id) => {dispatch(deleteHouse(id))} 
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Houses);

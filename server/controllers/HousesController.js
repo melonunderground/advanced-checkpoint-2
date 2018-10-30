@@ -18,12 +18,11 @@ module.exports.show =  function show(request, response) {
     
 module.exports.create =  function create(request, response) {
     const newHouse = new HouseModel({
-        name: request.body.year,
-        description: request.body.make,
-        phone: request.body.model,
+        name: request.body.name,
+        description: request.body.type,
         address: request.body.address,
-        numberOfBedrooms: request.body.numberOfBedrooms,
-        numberOfBathrooms: request.body.numberOfBathrooms
+        numberOfBedrooms: request.body.bedrooms,
+        numberOfBathrooms: request.body.bathrooms
 
     });
     newHouse.save()

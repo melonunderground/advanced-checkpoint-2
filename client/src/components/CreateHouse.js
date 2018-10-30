@@ -10,78 +10,79 @@
 import React from 'react';
 
 class CreateHouse extends React.Component {
- constructor() {
-   super();
-   this.state = {
-     house: {
-     name:"",
-     address:"",
-     type:"",
-     bathrooms:"",
-     bedrooms:""
+  constructor() {
+    super();
+    this.state = {
+      house: {
+        name: "",
+        address: "",
+        type: "",
+        bathrooms: "",
+        bedrooms: ""
+      }
     }
   }
- }
 
- render(){
-   return (
-     <div>
-     <h1>house</h1>
-     <form onSubmit={(e) => {
-        e.preventDefault();
-      if (this.props.createHouse) {
-        this.props.createHouse(this.state.house);
-      }
-
-     }}>
-
-     <div>
-
-     Name: <input onChange={(e) => {
-       const house = {name: e.target.value};
-       this.setState({
-         house: Object.assign(this.state.house,house)
-       });
-     }} />
-     </div>
-     <div>
-      Address: <input onChange={(e) => {
-        const house = {address: e.target.value};
-          this.setState({
-          house: Object.assign(this.state.house,house)
-          });
-        }} />
-      </div>
+  render() {
+    return (
       <div>
-      Type: <input onChange={(e) => {
-        const house = {type: e.target.value};
-        this.setState({
-          house: Object.assign(this.state.house,house)
-        });
-      }} />
-    </div>
-    <div>
-      Bedrooms: <input onChange={(e) => {
-        const house = {bedrooms: e.target.value};
-      this.setState({
-        house: Object.assign(this.state.house,house)
-      });
-    }} />
-  </div>
-  <div>
-      Bathrooms: <input onChange={(e) => {
-        const house = {bathrooms: e.target.value};
-    this.setState({
-      house: Object.assign(this.state.house,house)
-    });
-  }} />
-</div>
-<button>create</button>
-</form>
-</div>
+        <h1>create house</h1>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          if (this.props.createHouse) {
+            this.props.createHouse(this.state.house);
+            console.log(this.state.house)
+          }
 
-   )
- }
+        }}>
+
+          <div>
+
+            Name: <input onChange={(e) => {
+              const house = { name: e.target.value };
+              this.setState({
+                house: Object.assign(this.state.house, house)
+              });
+            }} />
+          </div>
+          <div>
+            Address: <input onChange={(e) => {
+              const house = { address: e.target.value };
+              this.setState({
+                house: Object.assign(this.state.house, house)
+              });
+            }} />
+          </div>
+          <div>
+            Type: <input onChange={(e) => {
+              const house = { type: e.target.value };
+              this.setState({
+                house: Object.assign(this.state.house, house)
+              });
+            }} />
+          </div>
+          <div>
+            Bedrooms: <input onChange={(e) => {
+              const house = { bedrooms: e.target.value };
+              this.setState({
+                house: Object.assign(this.state.house, house)
+              });
+            }} />
+          </div>
+          <div>
+            Bathrooms: <input onChange={(e) => {
+              const house = { bathrooms: e.target.value };
+              this.setState({
+                house: Object.assign(this.state.house, house)
+              });
+            }} />
+          </div>
+          <button>create</button>
+        </form>
+      </div>
+
+    )
+  }
 }
 
 

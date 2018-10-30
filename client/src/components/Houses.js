@@ -24,8 +24,8 @@ function Houses (props) {
                 <li>{house.type}</li>
                 <li>{house.address}</li>
             </ul>
-            <Link to={"/house/" + house.id}>details</Link>
-            <button onClick={() => {props.deleteHouse(house.id)}}>delete</button>
+            <Link to={"/house/" + house._id}>details</Link>
+            <button onClick={() => {props.deleteHouse(house._id)}}>delete</button>
        </div>);
       
    })

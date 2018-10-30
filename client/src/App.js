@@ -15,9 +15,7 @@ import CreateHouseContainer from "./containers/CreateHouseContainer";
 import {BrowserRouter,Route,Switch} from "react-router-dom";
 
 class App extends Component {
-  constructor() {
-    super();
-  }
+
 
   componentDidMount() {
     this.props.loadHouses();

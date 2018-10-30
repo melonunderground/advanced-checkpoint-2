@@ -7,9 +7,6 @@ const houseSchema = new mongoose.Schema({
     description: {
         type: String
     },
-    phone: {
-        type: String
-    },
     address: {
         type: String
     },

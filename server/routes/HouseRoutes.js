@@ -2,7 +2,7 @@
 
 let express =  require("express");
 const router = express.Router();
-let {list,show,create,update,remove} = require( "../controllers/HouseController");
+let {list,show,create,update,remove} = require( "../controllers/HousesController");
 
 
 router.get("/houses", list);
