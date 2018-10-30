@@ -16,13 +16,14 @@ module.exports.show =  function show(request, response) {
     })
 }
     
+
 module.exports.create =  function create(request, response) {
     const newHouse = new HouseModel({
         name: request.body.name,
-        description: request.body.type,
+        description: request.body.description,
         address: request.body.address,
-        numberOfBedrooms: request.body.bedrooms,
-        numberOfBathrooms: request.body.bathrooms
+        bedrooms: request.body.bedrooms,
+        bathrooms: request.body.bathrooms
 
     });
     newHouse.save()

@@ -19,7 +19,7 @@ export function loadHouses() {
     });
   };
 }
-function housesLoaded(houses) {
+export function housesLoaded(houses) {
   return {
     type: "HOUSES_LOADED",
     value: houses
@@ -40,7 +40,7 @@ export function createHouse(house) {
 
   export function deleteHouse(id) {
       return function (dispatch) {
-          fetch("/houses/" + id, {
+          fetch("/house/" + id, {
               method: "DELETE",
               headers: {"Content-Type": "application/json"},
       }).then((response) => {

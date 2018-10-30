@@ -10,10 +10,10 @@ const houseSchema = new mongoose.Schema({
     address: {
         type: String
     },
-    numberOfBedrooms: {
+    bedrooms: {
         type: Number
     },
-    numberOfBathrooms: {
+    bathrooms: {
         type: Number
     }
 });

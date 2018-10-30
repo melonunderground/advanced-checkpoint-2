@@ -8,6 +8,7 @@
 
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CreateHouse extends React.Component {
   constructor() {
@@ -15,13 +16,27 @@ class CreateHouse extends React.Component {
     this.state = {
       house: {
         name: "",
+        description: "",
         address: "",
-        type: "",
-        bathrooms: "",
-        bedrooms: ""
+        bedrooms: "",
+        bathrooms: ""
+
       }
     }
   }
+
+  clearOnSubmit = () => {
+    this.setState({
+      house: {
+        name: "",
+        description: "",
+        address: "",
+        bedrooms: "",
+        bathrooms: ""
+      }
+    }
+  )
+}
 
   render() {
     return (
@@ -31,7 +46,7 @@ class CreateHouse extends React.Component {
           e.preventDefault();
           if (this.props.createHouse) {
             this.props.createHouse(this.state.house);
-            console.log(this.state.house)
+         
           }
 
         }}>
@@ -46,16 +61,16 @@ class CreateHouse extends React.Component {
             }} />
           </div>
           <div>
-            Address: <input onChange={(e) => {
-              const house = { address: e.target.value };
+            Description: <input onChange={(e) => {
+              const house = { description: e.target.value };
               this.setState({
                 house: Object.assign(this.state.house, house)
               });
             }} />
           </div>
           <div>
-            Type: <input onChange={(e) => {
-              const house = { type: e.target.value };
+            Address: <input onChange={(e) => {
+              const house = { address: e.target.value };
               this.setState({
                 house: Object.assign(this.state.house, house)
               });
@@ -77,7 +92,10 @@ class CreateHouse extends React.Component {
               });
             }} />
           </div>
-          <button>create</button>
+          <button type='submit'>save</button>
+          
+            <Link to={"/houses"}><button>houses</button></Link>
+          
         </form>
       </div>
 

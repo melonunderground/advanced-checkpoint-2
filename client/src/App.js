@@ -25,18 +25,20 @@ class App extends Component {
   
   render() {
     return (
-      <BrowserRouter>
       <div>
+      <BrowserRouter>
+     
       <Switch>
 
       <Route path="/houses" component={HousesContainer}/>
       <Route path="/createhouse" component={CreateHouseContainer}/>
       <Route path="/house/:id" component={HouseContainer}/>
-  
+      <Route path="/" component={CreateHouseContainer}/>
       </Switch>
 
-      </div>
+   
       </BrowserRouter>
+      </div>
     );
   }
 }

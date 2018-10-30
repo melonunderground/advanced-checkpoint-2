@@ -13,7 +13,6 @@ import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 
 
-
 function Houses (props) {
     const houseDivs = props.houses.map((house,index)=> {
 
@@ -21,16 +20,19 @@ function Houses (props) {
         <div key={index}>
             <ul>
                 <li>{house.name}</li>
-                <li>{house.type}</li>
+                <li>{house.description}</li>
                 <li>{house.address}</li>
             </ul>
-            <Link to={"/house/" + house._id}>details</Link>
+            <Link to={"/house/" + house._id}><button>view</button></Link>
             <button onClick={() => {props.deleteHouse(house._id)}}>delete</button>
        </div>);
       
    })
     return (
+        <div>
+        <Link to={"/createhouse/"}><button>create house</button></Link>
         <div>{houseDivs}</div>
+        </div>
     );
 }
 

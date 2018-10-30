@@ -6,7 +6,7 @@ import {combineReducers} from "redux";
 
 function houses(state = [], action) { 
   if (action.type === "HOUSES_LOADED") {
-    return [...state, action.value];
+    return action.value;
   }
   return state;
 }

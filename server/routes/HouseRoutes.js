@@ -9,6 +9,6 @@ router.get("/houses", list);
 router.get("/house/:id", show);
 router.post("/houses", create);
 // router.put("/houses/:id", update);
-router.delete("/houses/:id", remove);
+router.delete("/house/:id", remove);
 
 module.exports =  router;
