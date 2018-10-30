@@ -25,18 +25,18 @@ class CreateHouse extends React.Component {
     }
   }
 
-  clearOnSubmit = () => {
-    this.setState({
-      house: {
-        name: "",
-        description: "",
-        address: "",
-        bedrooms: "",
-        bathrooms: ""
-      }
-    }
-  )
-}
+  // clearOnSubmit = () => {
+  //   this.setState({
+  //     house: {
+  //       name: "",
+  //       description: "",
+  //       address: "",
+  //       bedrooms: "",
+  //       bathrooms: ""
+  //     }
+  //   }
+  //   )
+  // }
 
   render() {
     return (
@@ -46,7 +46,6 @@ class CreateHouse extends React.Component {
           e.preventDefault();
           if (this.props.createHouse) {
             this.props.createHouse(this.state.house);
-         
           }
 
         }}>
@@ -93,9 +92,9 @@ class CreateHouse extends React.Component {
             }} />
           </div>
           <button type='submit'>save</button>
-          
-            <Link to={"/houses"}><button>houses</button></Link>
-          
+
+          <Link to={"/houses"}><button>houses</button></Link>
+
         </form>
       </div>
 

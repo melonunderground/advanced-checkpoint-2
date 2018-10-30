@@ -21,6 +21,7 @@ function House(props) {
     <div>
     <Link to={"/createhouse/"}><button>create house</button></Link>
     <Link to={"/houses"}><button>houses</button></Link>
+    <button onClick={() => {props.deleteHouse(house._id)}}>delete</button>
     </div>
     </div>
     );
